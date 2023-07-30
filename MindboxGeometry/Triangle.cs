@@ -19,10 +19,11 @@ public class Triangle : IFigure
         var perimeter = A + B + C;
         var halfPerimeter = perimeter / 2;
         
-        var square = halfPerimeter 
-                     * (halfPerimeter - A)
-                     * (halfPerimeter - B)
-                     * (halfPerimeter - C);
+        var square = Math.Sqrt(
+                        halfPerimeter 
+                        * (halfPerimeter - A)
+                        * (halfPerimeter - B)
+                        * (halfPerimeter - C));
 
         return square;
     }
