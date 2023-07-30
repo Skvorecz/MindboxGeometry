@@ -2,6 +2,8 @@
 
 public class Triangle : IFigure
 {
+    private const double FloatingPointTolerance = 1e-10;
+    
     public double A { get; }
     public double B { get; }
     public double C { get; }
@@ -37,6 +39,6 @@ public class Triangle : IFigure
         var squaredFirstLeg = sides[0] * sides[0];
         var squaredSecondLeg = sides[1] * sides[1];
 
-        return Math.Abs(squaredHypotenuse - (squaredFirstLeg + squaredSecondLeg)) < 1e-10;
+        return Math.Abs(squaredHypotenuse - (squaredFirstLeg + squaredSecondLeg)) < FloatingPointTolerance;
     }
 }
